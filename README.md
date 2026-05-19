@@ -1,5 +1,20 @@
 # Cybersecurity Capstone – Full Security Assessment
 
+## View the project
+
+**Live project site:** https://mandozone.github.io/cybersecurity-capstone-full-assesment/
+
+If you are viewing this repository on GitHub, start with the live site above. The `site/` folder contains the rendered portfolio page files, so opening `site/index.html` inside GitHub will show source code rather than the website.
+
+## TL;DR for recruiters
+
+| | |
+|---|---|
+| **Scenario** | Five-phase security assessment of the Artemis simulated lab environment. |
+| **What I built** | A structured assessment workflow covering reconnaissance, scanning, vulnerability identification, threat assessment, and reporting. |
+| **Evidence** | Masscan, Nmap, Nessus, Metasploit, and Burp Suite screenshots plus all five phase reports bundled inside the live site. |
+| **Security value** | Shows the ability to organize technical findings into a risk-focused assessment with remediation recommendations. |
+
 ## Overview
 This project is a full-scope cybersecurity assessment conducted in a simulated enterprise environment (Artemis Lab). The engagement follows a structured 5-phase methodology aligned with real-world security operations and risk assessment practices.
 
