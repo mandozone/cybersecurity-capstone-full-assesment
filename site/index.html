@@ -1,0 +1,668 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cybersecurity Capstone — Full Security Assessment · Romando Wright</title>
+  <meta name="description" content="A five-phase penetration-testing assessment of the Artemis lab environment: passive reconnaissance, target identification, vulnerability identification, threat assessment, and reporting. Tools: Masscan, Nmap, Nessus, Metasploit, Burp Suite. Conducted by Romando Wright (Springboard Cybersecurity Career Track)." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-row">
+      <div class="brand">
+        <span class="brand-mark">GENMONXXX</span>
+        <span class="brand-sep">/</span>
+        <span class="brand-name">CYBERSECURITY-CAPSTONE-FULL-ASSESMENT</span>
+      </div>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#overview">Overview</a>
+        <a href="#engineer">Analyst</a>
+        <a href="#methodology">Methodology</a>
+        <a href="#phase1">Phase 1</a>
+        <a href="#phase2">Phase 2</a>
+        <a href="#phase3">Phase 3</a>
+        <a href="#phase4">Phase 4</a>
+        <a href="#phase5">Phase 5</a>
+        <a href="#reports">Reports</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow">Kali Linux · VirtualBox Isolated Lab · Springboard Cybersecurity Career Track</p>
+          <h1>Cybersecurity Capstone — <span class="accent">Full Security Assessment</span></h1>
+          <p class="lede">A five-phase penetration-testing assessment of the Artemis simulated environment. From passive OSINT reconnaissance through threat modelling and CVSS-scored reporting — structured to mirror how real security operations engagements are scoped, executed, and delivered to stakeholders.</p>
+          <div class="tags">
+            <span class="tag">Reconnaissance</span>
+            <span class="tag">Scanning &amp; Enumeration</span>
+            <span class="tag">Vulnerability Identification</span>
+            <span class="tag">Threat Assessment</span>
+            <span class="tag">CVSS v3.1</span>
+            <span class="tag tag-accent">Authorized Lab Engagement</span>
+          </div>
+          <div class="status-pill">
+            <span class="status-dot" aria-hidden="true"></span>
+            ASSESSMENT COMPLETE — 5 / 5 PHASES DELIVERED
+          </div>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat"><span class="stat-num">5</span><span class="stat-label">Phases</span></div>
+          <div class="stat"><span class="stat-num">18</span><span class="stat-label">OSINT Tools</span></div>
+          <div class="stat"><span class="stat-num">5</span><span class="stat-label">Pentest Tools</span></div>
+          <div class="stat"><span class="stat-num">6.5</span><span class="stat-label">CVSS Base</span></div>
+          <div class="stat"><span class="stat-num">0</span><span class="stat-label">Exploits Run</span></div>
+          <div class="stat"><span class="stat-num">1</span><span class="stat-label">Target Host</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="overview" class="section">
+      <div class="container">
+        <p class="section-kicker">Engagement Overview</p>
+        <div class="two-col">
+          <div>
+            <h2>An authorized, non-destructive penetration-test of the Artemis lab — observation first, exploitation never.</h2>
+            <p>The engagement was scoped against a single Windows host inside an isolated VirtualBox lab network (attacker <code>10.10.10.5</code> Kali Linux, target <code>10.10.10.25</code>). The methodology follows the structure of a real security-operations workflow: reconnaissance, target identification, vulnerability identification, threat assessment, and executive plus technical reporting.</p>
+            <p>The deliverable is not a list of CVEs — it is a defensible chain of evidence showing how an unauthenticated network observer can move from public OSINT to a CVSS-scored finding, and what a remediation owner needs to do about it. Active exploitation was deliberately out of scope; every finding was validated against at least two independent tools.</p>
+          </div>
+          <aside class="card primary-file">
+            <p class="card-eyebrow">📁 Primary Deliverable</p>
+            <p class="card-title"><code>Capstone Phase 5.pdf</code></p>
+            <p class="card-meta">Penetration Testing Assessment Report · Executive summary + detailed technical report · Client: Artemis (simulated) · January 10, 2026</p>
+            <p class="card-meta"><a class="source-link" href="reports/Capstone%20Phase%205.pdf" target="_blank" rel="noopener">Open final report →</a></p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="engineer" class="section section-alt">
+      <div class="container engineer-grid">
+        <div class="engineer-card">
+          <p class="section-kicker">Analyst of Record</p>
+          <h2>Conducted end-to-end by <span class="accent">Romando Wright</span>.</h2>
+          <p>Every phase of this engagement — scoping, OSINT, scanning, vulnerability validation, threat modelling, CVSS scoring, executive briefing, and technical write-up — was authored by Romando Wright as part of the Springboard Cybersecurity Career Track. All work was performed within an authorized isolated lab; no packets were sent to any third-party system at any point.</p>
+          <ul class="bullets">
+            <li>Passive OSINT across 18 tools and six reconnaissance categories — zero packets to live infrastructure</li>
+            <li>Active scanning of a single in-scope host with Masscan, Nmap, Nessus, Metasploit (auxiliary only), and Burp Suite</li>
+            <li>CVSS v3.1 scoring and likelihood / impact analysis against four deployment contexts</li>
+            <li>Two-audience reporting — executive risk matrix for management, full technical write-up for remediation owners</li>
+          </ul>
+        </div>
+        <aside class="card metric-card">
+          <p class="card-eyebrow">Engagement Metadata</p>
+          <dl class="meta-list">
+            <div><dt>Client</dt><dd>Artemis (simulated environment)</dd></div>
+            <div><dt>Engagement</dt><dd>Authorized lab-based security assessment</dd></div>
+            <div><dt>Programme</dt><dd>Springboard Cybersecurity Career Track</dd></div>
+            <div><dt>Report Date</dt><dd>January 10, 2026</dd></div>
+            <div><dt>Attacker Host</dt><dd><code>10.10.10.5</code> · Kali Linux</dd></div>
+            <div><dt>Target Host</dt><dd><code>10.10.10.25</code> · Windows / RDP</dd></div>
+            <div><dt>Network</dt><dd>Isolated VirtualBox lab</dd></div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section id="methodology" class="section">
+      <div class="container">
+        <p class="section-kicker">Methodology</p>
+        <h2>Five phases, each gated on the artefacts of the last.</h2>
+        <p class="prose">The five phases are run in sequence because each one narrows the next. Reconnaissance defines the universe of possible targets; scanning narrows it to live services; vulnerability identification narrows it to weak ones; threat assessment narrows it to the ones that actually matter to the business; and reporting turns the chain of evidence into an action plan.</p>
+
+        <div class="phase-grid">
+          <a href="#phase1" class="phase-card">
+            <span class="phase-num">P1</span>
+            <h3>Reconnaissance</h3>
+            <p>Passive OSINT — social, infrastructure, and lab-only phishing design. No packets to target.</p>
+          </a>
+          <a href="#phase2" class="phase-card">
+            <span class="phase-num">P2</span>
+            <h3>Target Identification &amp; Scanning</h3>
+            <p>Confirm host reachability, enumerate exposed services, map the attack surface.</p>
+          </a>
+          <a href="#phase3" class="phase-card">
+            <span class="phase-num">P3</span>
+            <h3>Vulnerability Identification</h3>
+            <p>Run a vulnerability scanner, validate findings with a second tool, document evidence.</p>
+          </a>
+          <a href="#phase4" class="phase-card">
+            <span class="phase-num">P4</span>
+            <h3>Threat Assessment</h3>
+            <p>Likelihood × impact across deployment contexts, defensive controls, and CVSS scoring.</p>
+          </a>
+          <a href="#phase5" class="phase-card">
+            <span class="phase-num">P5</span>
+            <h3>Reporting</h3>
+            <p>Executive summary + detailed technical report — one engagement, two audiences.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="phase1" class="section section-alt">
+      <div class="container">
+        <p class="section-kicker">Phase 1 · Reconnaissance</p>
+        <h2>Passive OSINT only — zero packets sent to the target.</h2>
+        <p class="prose">The scope of Phase 1 was strictly passive: no scanning, no exploitation, no contact with personnel. The goal was to demonstrate how much attack-relevant information an outsider can assemble from public sources alone, and to narrow the attack surface before any active phase begins.</p>
+
+        <div class="config-grid recon-grid">
+          <article class="config-card">
+            <h3>Social &amp; Human Recon</h3>
+            <ul class="bullets">
+              <li><strong>Reddit:</strong> Public complaint about an SSH outage from a Times Square payroll manager</li>
+              <li><strong>LinkedIn:</strong> ~12 IT and security staff enumerated from public profiles</li>
+              <li><strong>Twitter / Instagram:</strong> General lifestyle patterns observed (no PII captured)</li>
+              <li><strong>BeenVerified:</strong> Conceptual e-mail verification noted; no lookup executed</li>
+            </ul>
+          </article>
+
+          <article class="config-card">
+            <h3>Infrastructure &amp; Domain Recon</h3>
+            <ul class="bullets">
+              <li><strong>theHarvester:</strong> 43 emails, 17 subdomains</li>
+              <li><strong>crt.sh:</strong> 22 additional subdomains via Certificate Transparency</li>
+              <li><strong>DNSDumpster:</strong> DNS map produced; on-prem MX server identified</li>
+              <li><strong>Shodan:</strong> 2 public IPs exposed; Apache 2.4.41 fingerprinted</li>
+              <li><strong>Wayback Machine:</strong> Legacy <code>/admin</code> path located</li>
+              <li><strong>Google Dorks:</strong> 3 internal PDF documents surfaced</li>
+              <li><strong>Rapid7 Job Board:</strong> Kubernetes + Duo MFA rollout confirmed</li>
+              <li><strong>Glassdoor:</strong> References to legacy mainframe systems</li>
+              <li><strong>GrayHatWarfare:</strong> No exposed public S3 buckets identified</li>
+              <li><strong>Nmap (ping-only):</strong> 3 live edge hosts detected — no service scan</li>
+              <li><strong>Proxychains + Tor:</strong> Passive browsing routed for source privacy</li>
+            </ul>
+          </article>
+
+          <article class="config-card">
+            <h3>Phishing Design (Lab-Only)</h3>
+            <ul class="bullets">
+              <li><strong>SET (Social Engineering Toolkit):</strong> Starbucks login portal cloned inside local VM</li>
+              <li><strong>Gophish:</strong> Phishing campaign template authored — <em>no SMTP configured, no campaigns sent</em></li>
+            </ul>
+            <p>Designed and staged for documentation; no email was ever sent and no live target ever interacted with the template.</p>
+          </article>
+
+          <article class="config-card phase-summary">
+            <h3>Phase 1 Summary</h3>
+            <ul class="bullets">
+              <li>18 OSINT tools used across six categories</li>
+              <li>0 packets sent to any in-scope or out-of-scope production system</li>
+              <li>Attack surface mapped and narrowed for transition into Phase 2</li>
+            </ul>
+            <p class="card-meta"><a class="source-link" href="reports/Capstone%20Phase%201.pdf" target="_blank" rel="noopener">Read full Phase 1 report →</a></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="phase2" class="section">
+      <div class="container">
+        <p class="section-kicker">Phase 2 · Target Identification &amp; Scanning</p>
+        <h2>From a public footprint to a single, confirmed live host.</h2>
+        <p class="prose">Phase 2 closed the gap between OSINT and a defined attack surface. A single Windows host was confirmed reachable inside the lab network, RDP was identified as the exposed service, and the operating-system fingerprint plus SSL/TLS metadata were captured as inputs to Phase 3.</p>
+
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead><tr><th>Tool</th><th>Role</th><th>Command</th><th>Outcome</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><strong>Masscan</strong></td>
+                <td>Rapid port discovery</td>
+                <td><code>masscan 10.10.10.25 -p3389 --rate 1000 -v</code></td>
+                <td>Host reachable; <code>3389/tcp</code> open</td>
+              </tr>
+              <tr>
+                <td><strong>Nmap</strong></td>
+                <td>Service &amp; OS enumeration</td>
+                <td><code>nmap -sV -sC -O 10.10.10.25</code></td>
+                <td>RDP service confirmed; Windows fingerprint; SSL metadata captured</td>
+              </tr>
+              <tr>
+                <td><strong>Nessus Essentials</strong></td>
+                <td>Vulnerability scan</td>
+                <td>Authenticated &amp; basic network scan</td>
+                <td>Medium-severity SSL Certificate Cannot Be Trusted</td>
+              </tr>
+              <tr>
+                <td><strong>Metasploit</strong></td>
+                <td>Validation (auxiliary only)</td>
+                <td><code>auxiliary/scanner/ssl/openssl_heartbeat</code></td>
+                <td>SSL/TLS responsiveness validated — no exploitation</td>
+              </tr>
+              <tr>
+                <td><strong>Burp Suite</strong></td>
+                <td>Application-layer proxy</td>
+                <td>Intercepting proxy on browser → host</td>
+                <td>HTTP GET to <code>http://10.10.10.25</code> captured</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="config-grid">
+          <article class="config-card">
+            <h3>Masscan — rapid exposure</h3>
+            <p>Used as a wide-net first-pass to confirm reachability and identify the high-value exposed port. Trades depth for speed.</p>
+<pre><code>$ sudo masscan 10.10.10.25 -p3389 --rate 1000 -v
+Starting masscan 1.3.2
+Scanning 1 hosts [1 port/host]
+Discovered open port 3389/tcp on 10.10.10.25</code></pre>
+          </article>
+
+          <article class="config-card">
+            <h3>Nmap — service &amp; OS fingerprint</h3>
+            <p>Followed Masscan to add service version, default-script context, and OS detection on the single open port.</p>
+<pre><code>$ sudo nmap -sV -sC -O 10.10.10.25
+PORT     STATE SERVICE       VERSION
+3389/tcp open  ms-wbt-server Microsoft Terminal Services
+| ssl-cert: Subject: commonName=WIN-...
+|   Issuer: commonName=WIN-...
+|_  Self-signed certificate
+OS details: Microsoft Windows 10/11</code></pre>
+          </article>
+        </div>
+
+        <p class="card-meta"><a class="source-link" href="reports/Capstone%20Phase%202.pdf" target="_blank" rel="noopener">Read full Phase 2 report →</a></p>
+      </div>
+    </section>
+
+    <section id="phase3" class="section section-alt">
+      <div class="container">
+        <p class="section-kicker">Phase 3 · Vulnerability Identification</p>
+        <h2>Identify, validate, document — every finding confirmed by a second tool.</h2>
+        <p class="prose">Phase 3 ran a vulnerability scanner against the in-scope host, then validated each finding with at least one independent tool. The deliverable is not a Nessus PDF — it is a chain of evidence, with screenshots, that survives review by a sceptical defender.</p>
+
+        <div class="tool-grid">
+
+          <article class="tool-card">
+            <header>
+              <span class="tool-num">Tool 1</span>
+              <h3>Masscan — Rapid Exposure Identification</h3>
+            </header>
+            <p>Re-run against the Phase 3 host (<code>192.168.56.104</code>) to anchor the chain of custody and re-confirm exposed services before deeper analysis.</p>
+            <pre><code>sudo masscan 192.168.56.104 -p3389 --rate 1000 -v</code></pre>
+            <figure class="tool-figure">
+              <img src="assets/masscan-scan.jpg" alt="Masscan terminal output confirming open port 3389/tcp on the target host." loading="lazy" />
+              <figcaption>Figure 3.1 — Masscan confirming open <code>3389/tcp</code> on the target host.</figcaption>
+            </figure>
+            <div class="pro-con">
+              <div><strong>Pros:</strong> Extremely fast; low overhead; ideal for rapid surface enumeration.</div>
+              <div><strong>Cons:</strong> No service version detection; no vulnerability identification.</div>
+            </div>
+          </article>
+
+          <article class="tool-card">
+            <header>
+              <span class="tool-num">Tool 2</span>
+              <h3>Nmap — Service &amp; OS Enumeration</h3>
+            </header>
+            <p>Added service version, default-script context, and OS fingerprint. Confirmed Microsoft RDP with attached SSL certificate metadata.</p>
+            <pre><code>sudo nmap -sV -sC -O 192.168.56.104</code></pre>
+            <figure class="tool-figure">
+              <img src="assets/nmap-enumeration.jpg" alt="Nmap service and OS enumeration results identifying ms-wbt-server on port 3389 with an SSL certificate." loading="lazy" />
+              <figcaption>Figure 3.2 — Nmap service / OS enumeration; RDP identified with attached self-signed certificate.</figcaption>
+            </figure>
+            <div class="pro-con">
+              <div><strong>Pros:</strong> Detailed service &amp; OS identification; script engine adds security context.</div>
+              <div><strong>Cons:</strong> Slower than Masscan; OS fingerprinting can return low-confidence matches.</div>
+            </div>
+          </article>
+
+          <article class="tool-card">
+            <header>
+              <span class="tool-num">Tool 3</span>
+              <h3>Nessus — Vulnerability Identification &amp; Risk Scoring</h3>
+            </header>
+            <p>A Nessus Essentials scan flagged a medium-severity finding: <em>SSL Certificate Cannot Be Trusted</em> — self-signed certificate, broken trust chain, identical issuer and subject. The first finding in this engagement to carry CVSS-style scoring.</p>
+            <div class="finding-callout">
+              <span class="finding-tag">FINDING · MEDIUM</span>
+              <strong>SSL Certificate Cannot Be Trusted</strong>
+              <ul>
+                <li>Self-signed X.509 certificate presented by RDP</li>
+                <li>No trusted certificate chain</li>
+                <li>Issuer == Subject (no third-party validation)</li>
+                <li>Facilitates man-in-the-middle attacks if reachable from untrusted networks</li>
+              </ul>
+            </div>
+            <figure class="tool-figure">
+              <img src="assets/nessus-vuln-report.jpg" alt="Nessus vulnerability report listing the untrusted SSL certificate finding with severity." loading="lazy" />
+              <figcaption>Figure 3.3 — Nessus vulnerability report identifying the untrusted SSL certificate.</figcaption>
+            </figure>
+            <figure class="tool-figure">
+              <img src="assets/nessus-plugin-details.jpg" alt="Nessus plugin details showing the affected certificate fields and remediation guidance." loading="lazy" />
+              <figcaption>Figure 3.4 — Plugin details and vendor remediation guidance.</figcaption>
+            </figure>
+            <div class="pro-con">
+              <div><strong>Pros:</strong> CVSS-based severity scoring; clear remediation; industry-recognised engine.</div>
+              <div><strong>Cons:</strong> Limited without authenticated credentials; can generate false positives; requires analyst interpretation.</div>
+            </div>
+          </article>
+
+          <article class="tool-card">
+            <header>
+              <span class="tool-num">Tool 4</span>
+              <h3>Metasploit — Validation (Non-Exploitative)</h3>
+            </header>
+            <p>An auxiliary SSL scanner module was executed to independently confirm SSL/TLS behaviour. No exploit was run — Metasploit was used purely as a second opinion against the Nessus finding.</p>
+            <pre><code>msf6 &gt; use auxiliary/scanner/ssl/openssl_heartbeat
+msf6 auxiliary(openssl_heartbeat) &gt; set RHOSTS 192.168.56.104
+msf6 auxiliary(openssl_heartbeat) &gt; run</code></pre>
+            <figure class="tool-figure">
+              <img src="assets/metasploit-ssl.jpg" alt="Metasploit auxiliary SSL scanner execution against the target host." loading="lazy" />
+              <figcaption>Figure 3.5 — Metasploit auxiliary SSL scanner execution.</figcaption>
+            </figure>
+            <div class="pro-con">
+              <div><strong>Pros:</strong> Validates scanner findings; protocol-level insight; non-exploitative at this stage.</div>
+              <div><strong>Cons:</strong> Requires correct module choice; no automatic risk score; not a replacement for a vulnerability scanner.</div>
+            </div>
+          </article>
+
+          <article class="tool-card">
+            <header>
+              <span class="tool-num">Tool 5</span>
+              <h3>Burp Suite — Application-Layer Traffic Analysis</h3>
+            </header>
+            <p>Burp was configured as an intercepting proxy between the browser and the target host. Used to demonstrate visibility into application-layer traffic and capture HTTP request/response pairs against the same host that exposed RDP.</p>
+            <figure class="tool-figure">
+              <img src="assets/burp-suite.jpg" alt="Burp Suite proxy showing intercepted HTTP request to the target host with full headers." loading="lazy" />
+              <figcaption>Figure 3.6 — Burp Suite proxy intercepting HTTP traffic; full request headers captured.</figcaption>
+            </figure>
+            <div class="pro-con">
+              <div><strong>Pros:</strong> Deep visibility into application traffic; essential for web-layer testing.</div>
+              <div><strong>Cons:</strong> Manual configuration; community edition has limited automation.</div>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="card-meta"><a class="source-link" href="reports/Capstone%20Phase%203.pdf" target="_blank" rel="noopener">Read full Phase 3 report →</a></p>
+      </div>
+    </section>
+
+    <section id="phase4" class="section">
+      <div class="container">
+        <p class="section-kicker">Phase 4 · Threat Assessment</p>
+        <h2>From a Nessus finding to a defensible business risk.</h2>
+        <p class="prose">Phase 4 took the confirmed cryptographic weakness from Phase 3 and reasoned about it as a business risk: which CIA properties it breaks, what an attacker could realistically chain it into, how likely that is across deployment contexts, and what a remediation owner can do about it. Output: a CVSS v3.1 base score and a likelihood / impact matrix.</p>
+
+        <div class="finding-banner">
+          <div>
+            <p class="card-eyebrow">Primary Confirmed Vulnerability</p>
+            <h3>Untrusted (self-signed) SSL/TLS certificate on remote-access service</h3>
+            <p>Combined with legacy cryptographic configuration on the RDP listener, this weakens three foundational properties:</p>
+            <ul class="bullets">
+              <li><strong>Confidentiality</strong> — encrypted traffic cannot be reliably trusted</li>
+              <li><strong>Authenticity</strong> — the identity of the remote endpoint cannot be verified</li>
+              <li><strong>Integrity</strong> — encrypted sessions may be subject to interception or manipulation</li>
+            </ul>
+            <p>Acceptable in isolation in a lab; meaningfully risky in any production or remote-access scenario.</p>
+          </div>
+        </div>
+
+        <div class="cvss-grid">
+          <div class="cvss-card">
+            <p class="card-eyebrow">CVSS v3.1</p>
+            <p class="cvss-score">6.5 <span>Medium</span></p>
+            <dl class="cvss-vector">
+              <div><dt>Attack Vector</dt><dd>Network</dd></div>
+              <div><dt>Attack Complexity</dt><dd>Low</dd></div>
+              <div><dt>Privileges Required</dt><dd>None</dd></div>
+              <div><dt>User Interaction</dt><dd>Required</dd></div>
+              <div><dt>Impact</dt><dd>Moderate</dd></div>
+            </dl>
+          </div>
+
+          <div class="likelihood-card">
+            <p class="card-eyebrow">Likelihood by Deployment Context</p>
+            <ul class="likelihood-list">
+              <li><span class="lh lh-low">LOW</span> Isolated lab environment</li>
+              <li><span class="lh lh-high">HIGH</span> Internet-facing system</li>
+              <li><span class="lh lh-high">HIGH</span> Remote workforce access</li>
+              <li><span class="lh lh-high">HIGH</span> No MFA enforced</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 class="section-sub">Realistic Threat Scenario (Production Context)</h3>
+        <ol class="scenario-list">
+          <li><strong>Service discovery</strong> — attacker locates the exposed remote-access service through indexing or scanning.</li>
+          <li><strong>Endpoint impersonation</strong> — because the certificate is untrusted, the attacker can stand up a look-alike endpoint without triggering reliable trust validation.</li>
+          <li><strong>Traffic interception</strong> — interception occurs over a compromised path (open Wi-Fi, rogue gateway, internal hop).</li>
+          <li><strong>User trust bypass</strong> — the user clicks past the certificate warning, as they have been conditioned to.</li>
+          <li><strong>Credential exposure</strong> — authentication material or session data is captured; lateral movement becomes possible.</li>
+        </ol>
+
+        <div class="impact-grid">
+          <article class="impact-card">
+            <h3>Technical Impact</h3>
+            <ul class="bullets">
+              <li>Loss of secure authentication assurance</li>
+              <li>Increased risk of credential interception</li>
+              <li>Session compromise potential</li>
+            </ul>
+          </article>
+          <article class="impact-card">
+            <h3>Operational Impact</h3>
+            <ul class="bullets">
+              <li>Unauthorized system access</li>
+              <li>Lateral movement across internal systems</li>
+              <li>Service availability concerns</li>
+            </ul>
+          </article>
+          <article class="impact-card">
+            <h3>Business Impact</h3>
+            <ul class="bullets">
+              <li>Increased incident response and recovery costs</li>
+              <li>Compliance and audit exposure</li>
+              <li>Loss of trust in remote-access infrastructure</li>
+            </ul>
+          </article>
+        </div>
+
+        <h3 class="section-sub">Defensive Controls &amp; Remediation</h3>
+        <div class="two-col">
+          <article class="config-card">
+            <h3>Blocking mechanisms</h3>
+            <ul class="bullets">
+              <li>Endpoint security software (AV / EDR)</li>
+              <li>Network-based intrusion detection (IDS / IPS)</li>
+              <li>Certificate-validation enforcement at the client</li>
+              <li>Multi-factor authentication on the remote-access service</li>
+            </ul>
+          </article>
+          <article class="config-card">
+            <h3>Recommended remediation</h3>
+            <ul class="bullets">
+              <li>Replace the self-signed certificate with a CA-issued certificate</li>
+              <li>Enforce certificate validation for remote services</li>
+              <li>Restrict remote access to trusted networks and users</li>
+              <li>Implement multi-factor authentication</li>
+              <li>Monitor and log all remote-access activity</li>
+            </ul>
+          </article>
+        </div>
+
+        <p class="card-meta"><a class="source-link" href="reports/Capstone%20Phase%204.pdf" target="_blank" rel="noopener">Read full Phase 4 report →</a></p>
+      </div>
+    </section>
+
+    <section id="phase5" class="section section-alt">
+      <div class="container">
+        <p class="section-kicker">Phase 5 · Reporting</p>
+        <h2>One engagement, two audiences — management and remediation owners.</h2>
+        <p class="prose">The final deliverable is split into an Executive Summary (a non-technical management report with a risk matrix and four executive recommendations) and a Detailed Technical Report (scope, objectives, assumptions, timeline, reconnaissance activities, identified vulnerabilities, threat analysis, recommendations, conclusion). The split is intentional: a CISO does not need <code>ssl-cert: Self-signed</code>, and a systems administrator does not need a quarterly board narrative.</p>
+
+        <div class="risk-matrix-wrap table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr><th>Risk Area</th><th>Description</th><th>Likelihood</th><th>Business Impact</th><th>Overall Risk</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Remote Access Exposure</strong></td>
+                <td>RDP services accessible beyond trusted network boundaries.</td>
+                <td><span class="risk risk-med">Medium</span></td>
+                <td><span class="risk risk-high">High</span></td>
+                <td><span class="risk risk-med">Medium</span></td>
+              </tr>
+              <tr>
+                <td><strong>Cryptographic Weakness</strong></td>
+                <td>Self-signed SSL certificates reduce trust assurance and increase exposure to interception and impersonation.</td>
+                <td><span class="risk risk-med">Medium</span></td>
+                <td><span class="risk risk-med">Medium</span></td>
+                <td><span class="risk risk-med">Medium</span></td>
+              </tr>
+              <tr>
+                <td><strong>Lateral Movement Potential</strong></td>
+                <td>Initial compromise could allow attackers to expand control across internal systems and services.</td>
+                <td><span class="risk risk-low">Low–Medium</span></td>
+                <td><span class="risk risk-high">High</span></td>
+                <td><span class="risk risk-med">Medium</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="exec-grid">
+          <article class="exec-card">
+            <p class="card-eyebrow">Executive Recommendations</p>
+            <ul class="bullets">
+              <li>Replace self-signed certificates with CA-issued certificates to restore trust and protect data.</li>
+              <li>Limit remote access to approved users and locations through improved network controls.</li>
+              <li>Require additional identity verification (MFA) for administrative access to critical systems.</li>
+              <li>Perform regular system reviews and security assessments as the environment evolves.</li>
+            </ul>
+          </article>
+
+          <article class="exec-card">
+            <p class="card-eyebrow">Technical Report Structure</p>
+            <ol class="ordered-list">
+              <li>Scope of Work</li>
+              <li>Project Objectives</li>
+              <li>Assumptions</li>
+              <li>Timeline (Phases 1–5)</li>
+              <li>Reconnaissance Activities</li>
+              <li>Identified Vulnerabilities</li>
+              <li>Threat Analysis</li>
+              <li>Recommendations</li>
+              <li>Conclusion</li>
+            </ol>
+          </article>
+        </div>
+
+        <blockquote class="takeaway">
+          <p class="takeaway-title">Key takeaway — the discipline is in what we deliberately did not do.</p>
+          <p>The hardest part of this engagement was not finding a vulnerability — it was demonstrating that the vulnerability was real without firing a single exploit. Two independent tools confirmed the same SSL/TLS weakness. A CVSS v3.1 score and a likelihood / impact matrix translated it into a number a manager could act on. A two-audience report made sure both the boardroom and the workstation got the answer they actually needed.</p>
+        </blockquote>
+      </div>
+    </section>
+
+    <section id="tools" class="section">
+      <div class="container">
+        <p class="section-kicker">Tooling</p>
+        <h2>Industry-standard tools, used in their conventional roles.</h2>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead><tr><th>Tool</th><th>Layer</th><th>Used For</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Masscan</strong></td><td>L3 / L4</td><td>Rapid port discovery — first-pass reachability check.</td></tr>
+              <tr><td><strong>Nmap</strong></td><td>L3 / L4 / L7</td><td>Service version &amp; OS enumeration, default-script reconnaissance.</td></tr>
+              <tr><td><strong>Nessus Essentials</strong></td><td>Vulnerability</td><td>CVE / CVSS scanner — produced the primary finding.</td></tr>
+              <tr><td><strong>Metasploit (auxiliary)</strong></td><td>Validation</td><td>Independent confirmation of SSL/TLS behaviour — no exploit module run.</td></tr>
+              <tr><td><strong>Burp Suite</strong></td><td>L7</td><td>Intercepting proxy for application-layer traffic inspection.</td></tr>
+              <tr><td><strong>theHarvester · crt.sh · Shodan · DNSDumpster</strong></td><td>OSINT</td><td>Passive reconnaissance of public footprint.</td></tr>
+              <tr><td><strong>SET · Gophish</strong></td><td>OSINT / lab</td><td>Phishing-template authorship (lab-only, no campaign sent).</td></tr>
+              <tr><td><strong>Wireshark · Proxychains + Tor</strong></td><td>Network</td><td>Traffic analysis and source-privacy routing for passive browsing.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section section-alt">
+      <div class="container">
+        <p class="section-kicker">Skills Demonstrated</p>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead><tr><th>Skill</th><th>What it proves</th></tr></thead>
+            <tbody>
+              <tr><td>Passive OSINT discipline</td><td>Knowing when not to send a packet is a security skill, not a limitation.</td></tr>
+              <tr><td>Tool-chain layering</td><td>Masscan → Nmap → Nessus → Metasploit → Burp — each tool used at its correct depth.</td></tr>
+              <tr><td>Cross-tool validation</td><td>No finding is reported until a second tool confirms it.</td></tr>
+              <tr><td>CVSS v3.1 reasoning</td><td>Translating an SSL warning into AV/AC/PR/UI/Impact and a 6.5 base score.</td></tr>
+              <tr><td>Likelihood × impact analysis</td><td>Same finding scored across four deployment contexts, not as one number.</td></tr>
+              <tr><td>Two-audience reporting</td><td>Executive summary for management; technical report for remediation owners.</td></tr>
+              <tr><td>Scope discipline</td><td>Single in-scope host; zero out-of-scope packets; no exploitation, ever.</td></tr>
+              <tr><td>Evidence chain</td><td>Every figure in the report ties back to a command and a screenshot.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="reports" class="section">
+      <div class="container">
+        <p class="section-kicker">Reports &amp; Artefacts</p>
+        <h2>Download the source PDFs.</h2>
+        <p class="prose">Each phase is delivered as a standalone PDF; the Phase 5 PDF is the executive plus technical roll-up of all five.</p>
+        <div class="report-grid">
+          <a class="report-card" href="reports/Capstone%20Phase%201.pdf" target="_blank" rel="noopener">
+            <span class="report-num">P1</span>
+            <strong>Phase 1 — Reconnaissance</strong>
+            <span>Passive OSINT · 18 tools · 0 packets</span>
+          </a>
+          <a class="report-card" href="reports/Capstone%20Phase%202.pdf" target="_blank" rel="noopener">
+            <span class="report-num">P2</span>
+            <strong>Phase 2 — Target Identification &amp; Scanning</strong>
+            <span>Masscan · Nmap · Nessus · Metasploit · Burp</span>
+          </a>
+          <a class="report-card" href="reports/Capstone%20Phase%203.pdf" target="_blank" rel="noopener">
+            <span class="report-num">P3</span>
+            <strong>Phase 3 — Vulnerability Identification</strong>
+            <span>Self-signed SSL — Medium severity finding</span>
+          </a>
+          <a class="report-card" href="reports/Capstone%20Phase%204.pdf" target="_blank" rel="noopener">
+            <span class="report-num">P4</span>
+            <strong>Phase 4 — Threat Assessment</strong>
+            <span>CVSS v3.1 6.5 · Likelihood × impact</span>
+          </a>
+          <a class="report-card highlight" href="reports/Capstone%20Phase%205.pdf" target="_blank" rel="noopener">
+            <span class="report-num">P5</span>
+            <strong>Phase 5 — Penetration Testing Assessment Report</strong>
+            <span>Executive summary + detailed technical report</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <div>
+        <p class="brand-mark">GENMONXXX / CYBERSECURITY-CAPSTONE-FULL-ASSESMENT</p>
+        <p class="footer-meta">Kali Linux · VirtualBox Lab · Springboard Cybersecurity Career Track · January 10, 2026</p>
+      </div>
+      <div class="footer-credit">
+        <p>Five-phase security assessment conducted by <strong>Romando Wright</strong>.</p>
+        <p class="footer-meta">© <span id="year"></span> — Assessment documentation site. Repository spelling preserved: <code>cybersecurity-capstone-full-assesment</code>.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
